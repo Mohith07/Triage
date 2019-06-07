@@ -1,0 +1,5 @@
+GET https://jira.navis.com/rest/api/latest/issue/ARGO-192811
+Content-Type: application/json
+Authorization: Basic amFpbm1vOk5hdmlzITEyMw==
+
+###
