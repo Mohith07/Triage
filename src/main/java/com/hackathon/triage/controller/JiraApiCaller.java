@@ -1,5 +1,7 @@
 package com.hackathon.triage.controller;
 
+import com.hackathon.triage.Domain.JiraAccount;
+import com.hackathon.triage.config.ApplicationContextHolder;
 import com.hackathon.triage.config.JiraConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -7,29 +9,18 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
-
-import java.util.Collections;
-import java.util.List;
 
 /**
  * @author <a href="mailto:arpit.srivastava@navis.com">Arpit Srivastava</a>
  */
-@RestController
-@RequestMapping("/triage")
-public class BaseController {
+public class JiraApiCaller implements Runnable {
 
-    @Autowired
-    private JiraConfig jiraConfig;
-
-    @GetMapping
-    public List<String> hitJiraApi() {
+    @Override
+    public void run() {
         RestTemplate restTemplate = new RestTemplate();
+        JiraAccount jiraConfig = JiraConfig.getJiraAccountObject();
 
         System.out.println("URL ::: " + jiraConfig.getUrl());
         System.out.println("AUTH ::: " + jiraConfig.getAuthenticationToken());
@@ -46,13 +37,8 @@ public class BaseController {
 
             System.out.println("HTTP STATUS CODE : " + result.getStatusCode());
             System.out.println(result.getBody());
-        } catch(RestClientException e) {
+        } catch (RestClientException e) {
             e.printStackTrace();
         }
-
-        //TODO: Parse this String using JsonParser and do further work.
-
-        return Collections.emptyList();
-
     }
 }
