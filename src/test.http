@@ -3,3 +3,8 @@ Content-Type: application/json
 Authorization: Basic amFpbm1vOk5hdmlzITEyMw==
 
 ###
+
+GET http://localhost:8080/triage
+Content-Type: application/json
+
+###
