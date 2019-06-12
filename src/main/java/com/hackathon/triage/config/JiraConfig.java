@@ -16,9 +16,6 @@ import javax.annotation.PostConstruct;
 @Component
 public class JiraConfig {
 
-    @Value("${jira.api}")
-    private String url;
-
     @Value("${jira.authentication.username}")
     private String userName;
 
@@ -29,7 +26,7 @@ public class JiraConfig {
 
     @PostConstruct
     public void initialize() {
-        jiraAccount = new JiraAccount(url, userName, password);
+        jiraAccount = new JiraAccount(userName, password);
     }
 
     public static JiraAccount getJiraAccountObject() {

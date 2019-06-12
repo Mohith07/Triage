@@ -4,24 +4,25 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import java.util.List;
+import java.util.Date;
 
+/**
+ * @author <a href="mailto:arpit.srivastava@navis.com">Arpit Srivastava</a>
+ */
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Project {
+@NoArgsConstructor
+public class JobConfig {
+
     @Id
     private int id;
 
     private String name;
 
-    private String description;
+    private long totalRecords;
 
-    @OneToMany(cascade = CascadeType.MERGE)
-    private List<Component> components;
+    private Date lastModifiedDate;
 }

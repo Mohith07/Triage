@@ -10,8 +10,6 @@ import lombok.Data;
 @AllArgsConstructor
 public class JiraAccount {
 
-    private String url;
-
     private String userName;
 
     private String password;
