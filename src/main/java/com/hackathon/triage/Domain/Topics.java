@@ -7,8 +7,29 @@ import java.util.List;
 import java.util.Map;
 
 import static com.hackathon.triage.util.StringConstants.ADAPTER;
+import static com.hackathon.triage.util.StringConstants.AGVSCHEDULER;
+import static com.hackathon.triage.util.StringConstants.ASCSCHEDULER;
+import static com.hackathon.triage.util.StringConstants.AUTOSHUTTLE;
+import static com.hackathon.triage.util.StringConstants.AUTOSTOW;
+import static com.hackathon.triage.util.StringConstants.BILLING;
+import static com.hackathon.triage.util.StringConstants.CARGO;
+import static com.hackathon.triage.util.StringConstants.CLUSTERINGMESSAGING;
+import static com.hackathon.triage.util.StringConstants.DATAMODEL;
 import static com.hackathon.triage.util.StringConstants.DISPACHER;
+import static com.hackathon.triage.util.StringConstants.ECI;
+import static com.hackathon.triage.util.StringConstants.EDI;
+import static com.hackathon.triage.util.StringConstants.EXPERTDECKING;
+import static com.hackathon.triage.util.StringConstants.FRAMEWORK;
+import static com.hackathon.triage.util.StringConstants.GATE;
+import static com.hackathon.triage.util.StringConstants.GENERAL;
+import static com.hackathon.triage.util.StringConstants.PRIMEROUTE;
+import static com.hackathon.triage.util.StringConstants.RAILTZDECKER;
+import static com.hackathon.triage.util.StringConstants.REEFER;
 import static com.hackathon.triage.util.StringConstants.SCHEDULER;
+import static com.hackathon.triage.util.StringConstants.SEMIAUTOMATED;
+import static com.hackathon.triage.util.StringConstants.SIDELOADINGCRANE;
+import static com.hackathon.triage.util.StringConstants.TECH;
+import static com.hackathon.triage.util.StringConstants.VESSEL;
 
 public class Topics {
     static Map<ComponentEnum, List<String>> mapOfCategoryAndListOftopics = null;
@@ -85,7 +106,7 @@ public class Topics {
     }
 
     private List<String> getXpsList() {
-        return Arrays.asList();
+        return Arrays.asList(GENERAL, TECH, EXPERTDECKING, PRIMEROUTE, DATAMODEL, SEMIAUTOMATED, AUTOSTOW);
     }
 
     private List<String> getEdiList() {
@@ -106,13 +127,14 @@ public class Topics {
     }
 
     private List<String> getN4GeneralList() {
-        List<String> topicsN4GeneralList= Arrays.asList();
+        List<String> topicsN4GeneralList= Arrays.asList(FRAMEWORK, GENERAL, PRIMEROUTE, GATE, CLUSTERINGMESSAGING, BILLING, EDI, VESSEL, CARGO );
         return topicsN4GeneralList;
     }
 
 
     private List<String> getA4TopicList() {
-        List<String> topicsA4 = Arrays.asList(SCHEDULER, DISPACHER, ADAPTER);
+        List<String> topicsA4 = Arrays.asList(AGVSCHEDULER, ASCSCHEDULER, DISPACHER, GENERAL,
+                SIDELOADINGCRANE, AUTOSHUTTLE, ECI, DISPACHER, RAILTZDECKER, REEFER);
         return topicsA4;
     }
 
