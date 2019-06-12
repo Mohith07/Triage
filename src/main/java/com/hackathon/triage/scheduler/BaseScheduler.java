@@ -1,6 +1,4 @@
-package com.hackathon.triage.controller;
-
-import org.springframework.stereotype.Component;
+package com.hackathon.triage.scheduler;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -9,8 +7,8 @@ import java.util.concurrent.TimeUnit;
 /**
  * @author <a href="mailto:arpit.srivastava@navis.com">Arpit Srivastava</a>
  */
-@Component
-public class BaseExecutor {
+//@Component
+public class BaseScheduler {
 
     private ScheduledExecutorService executor;
 

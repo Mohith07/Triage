@@ -19,14 +19,17 @@ public class JiraConfig {
     @Value("${jira.api}")
     private String url;
 
-    @Value("${jira.authentication.token}")
-    private String authenticationToken;
+    @Value("${jira.authentication.username}")
+    private String userName;
+
+    @Value(("${jira.authentication.password}"))
+    private String password;
 
     private static JiraAccount jiraAccount;
 
     @PostConstruct
     public void initialize() {
-        jiraAccount = new JiraAccount(url, authenticationToken);
+        jiraAccount = new JiraAccount(url, userName, password);
     }
 
     public static JiraAccount getJiraAccountObject() {

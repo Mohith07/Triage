@@ -4,6 +4,6 @@ import lombok.Data;
 
 @Data
 public class Expertise {
-    Topic area;
+    ComponentEnum area;
     int points;
 }
