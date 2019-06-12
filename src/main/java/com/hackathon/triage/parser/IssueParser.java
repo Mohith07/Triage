@@ -1,5 +1,6 @@
 package com.hackathon.triage.parser;
 
+<<<<<<< HEAD
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.hackathon.triage.Domain.Component;
 import com.hackathon.triage.Domain.Issue;
@@ -108,5 +109,14 @@ public class IssueParser {
 
     public static Map<Integer, List<Issue>> getComponentIssueMapList() {
         return issueMapList;
+=======
+import com.hackathon.triage.repository.IssueRepo;
+import org.springframework.http.ResponseEntity;
+
+public class IssueParser {
+
+    public static void parseIssue(ResponseEntity<String> result) {
+
+>>>>>>> develop
     }
 }
