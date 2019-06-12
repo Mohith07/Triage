@@ -1,6 +1,6 @@
 package com.hackathon.triage.Domain;
 
-public enum Topic {
+public enum ComponentEnum {
     A4,
     N4_general,
     N4_framework,

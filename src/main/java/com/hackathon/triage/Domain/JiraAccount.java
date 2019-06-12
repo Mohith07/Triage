@@ -12,5 +12,7 @@ public class JiraAccount {
 
     private String url;
 
-    private String authenticationToken;
+    private String userName;
+
+    private String password;
 }
